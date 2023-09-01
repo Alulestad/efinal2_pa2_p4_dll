@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<title>Document</title>
+</head>
+<body>
+    <form th:action="@{/estudiantes/registrar}" th:object="${estudiante}" th:method="POST">
+        <table>
+            <tr>
+                <td>
+                    <label class="fw-bold">Nombre: </label>
+                </td>
+                <td>
+                    <input type="text" id="estudiante.nombre" th:field="${estudiante.nombre}" class="form-control">
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <label class="fw-bold">Apellido: </label>
+                </td>
+                <td>
+                    <input type="text" id="estudiante.apellido" th:field="${estudiante.apellido}" class="form-control">
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <label class="fw-bold">Cédula: </label>
+                </td>
+                <td>
+                    <input type="text" id="estudiante.cedula" th:field="${estudiante.cedula}" class="form-control">
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <label class="fw-bold">Dirección: </label>
+                </td>
+                <td>
+                    <input type="text" id="estudiante.direccion" th:field="${estudiante.direccion}" class="form-control">
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <label class="fw-bold">Teléfono: </label>
+                </td>
+                <td>
+                    <input type="text" id="estudiante.telefono" th:field="${estudiante.telefono}" class="form-control">
+                </td>
+
+            </tr>
+        </table>
+
+        <input type="submit" value="Guardar" class="btn btn-success">
+    </form>
+
+</body>
+</html>
+
