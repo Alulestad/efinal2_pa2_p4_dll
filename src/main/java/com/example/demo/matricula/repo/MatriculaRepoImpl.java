@@ -38,6 +38,10 @@ public class MatriculaRepoImpl implements IMatriculaRepo {
 
 	@Override
 	@Transactional(value = TxType.REQUIRED)
+	//Observacion me bota que requiere la transaccion en el paralel stream sin envargo si cosnta con la misma
+	//por tanto parece que cada hilo maneja una transaccion diferente por eso le 
+	//intente con requires_NEW en el me´todo pero ni aun así.
+	//de tal modo me veo forzado a poner requides acá.
 	public void insertar(Matricula matricula) {
 		this.entityManager.persist(matricula);
 		

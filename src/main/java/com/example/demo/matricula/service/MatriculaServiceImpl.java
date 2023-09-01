@@ -93,6 +93,7 @@ public class MatriculaServiceImpl implements IMatriculaService {
 	}
 
 	@Override
+	@Transactional(value = TxType.REQUIRES_NEW)
 	public void matricularConCedulaCodigo(String cedula, String codigo, Matricula matricula) {
 		
 		Estudiante estudiante= this.iEstudianteRepo.seleccionarPorCedula(cedula);
